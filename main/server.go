@@ -13,8 +13,8 @@ func main() {
 	// Use the thumbnailHandler function 
 	http.HandleFunc("/api/thumbnail", thumbnailHandler)
 	
-	// Serve static files from the frontend/dist directory.
-	fs := http.FileServer(http.Dir("./frontend/dist"))
+	// Serve static files from the front-end/dist directory.
+	fs := http.FileServer(http.Dir("./front-end/dist"))
 	http.Handle("/", fs)
 
 	// Start the server.
@@ -92,7 +92,7 @@ func thumbnailHandler(w http.ResponseWriter, r *http.Request) {
 	err = json.NewDecoder(response.Body).Decode(&apiResponse)
 	checkError(err)
 
-	// Pass back the screenshot URL to the frontend.
+	// Pass back the screenshot URL to the front-end.
 	_, err = fmt.Fprintf(w, `{ "screenshot": "%s" }`, apiResponse.Screenshot)
 	checkError(err)
 }

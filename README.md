@@ -1,4 +1,4 @@
-Thumbnail generator, built with Vue.js for the frontend and Golang for the backend. 
+Thumbnail generator, built with Vue.js for the front-end and Golang for the backend. 
 
 To run on localhost:3000, 
 	1) Go to your go directory and clone this repo
